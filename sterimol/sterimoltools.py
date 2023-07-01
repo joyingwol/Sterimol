@@ -1,5 +1,4 @@
 #!/usr/bin/python
-from __future__ import print_function, absolute_import
 
 
 ###Sterimol (and Tolman CA) Calculator###
@@ -12,10 +11,12 @@ from __future__ import print_function, absolute_import
 
 #Python Libraries
 import subprocess, sys, os
+import math
 from numpy import *
 from scipy import *
 from math import *
 import numpy as np
+
 #from vpython import *
 
 #Chemistry Libaries
@@ -187,7 +188,7 @@ def dihedral(atoma,atomb,atomc,atomd):
 
 class getinData:
    def __init__(self, file):
-      if not os.path.exists(file+".com"):
+      if not os.path.exists(file+".gjf"):
          print(("\nFATAL ERROR: Input file [ %s ] does not exist"%file))
       def getATOMTYPES(self, inlines):
          self.ATOMTYPES = []
@@ -219,7 +220,7 @@ class getinData:
             elif len(inlines[i].split()) == 4:
                self.CARTESIANS.append([float(inlines[i].split()[1]), float(inlines[i].split()[2]), float(inlines[i].split()[3])])
 
-      infile = open(file+".com","r")
+      infile = open(file+".gjf","r")
       inlines = infile.readlines()
       getATOMTYPES(self, inlines)
       self.NATOMS=len(self.ATOMTYPES)
@@ -808,3 +809,4 @@ rcov = [0.32, 0.46, 1.20, 0.94, 0.77, 0.75, 0.71, 0.63, 0.64, 0.67,
 		1.46, 1.37, 1.31, 1.23, 1.18, 1.16, 1.11, 1.12, 1.13, 1.32,
 		1.30, 1.30, 1.36, 1.31, 1.38, 1.42, 2.01, 1.81, 1.67, 1.58,
 		1.52, 1.53, 1.54, 1.55]
+

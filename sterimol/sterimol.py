@@ -1,5 +1,4 @@
 #!/usr/bin/python
-from __future__ import print_function, absolute_import
 
 # THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -21,9 +20,9 @@ from __future__ import print_function, absolute_import
 ###############################################################
 
 
-from .sterimoltools import *
+from sterimoltools import *
 
-def main():
+if __name__ == "__main__":
    files = []
    jobtype=2
    radii = "cpk"; atom1 = 1; atom2 = 2
@@ -51,7 +50,4 @@ def main():
       for file in files:
          calcSandwich(file)
       print("\n")
-
-if __name__ == "__main__":
-    main()
 
