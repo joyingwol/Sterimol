@@ -18,6 +18,7 @@ Sterimol runs as a Python module. There are two ways to make this work below. In
 3.	Now run the script with Gaussian input or output files as `python -m sterimol file(s)`
 
 N.B. If you do want to run the scripts directly (i.e. not as a module) you may need to delete a single period on line 24 of sterimol.py (i.e. `from sterimoltools import * `)
+P.S. Steps aboves are not changed in this branch.
 
 #### Correct Usage
 
@@ -37,6 +38,7 @@ python -m sterimol (-a1 atom A) (-a2 atom B) (-radii radius-model) file(s)
 * `-a1` and `-a2` specify atoms A and B atoms for the calculation - these fields are mandatory as they specify the axis along which Sterimol parameters are calculated.
 * The `-radii` option specifies the radial model used; it may be set to `-radii bondi` or `-radii cpk` for either van der Waals radii from [Bondi](http://pubs.acs.org/doi/abs/10.1021/j100785a001) or [CPK](https://en.wikipedia.org/wiki/Space-filling_model). If left blank, the default setting uses the original CPK radii.
 
+P.S. use 'python -m sterimol input >> output' or 'sterimol.py input >> output' to get a output file instead of command window.
 
 #### Example 1:
 Calculating Tolman cone angles, metal to ring-centroid distances, and Sterimol parameters for a half-sandwich complex from a Gaussian output file.
